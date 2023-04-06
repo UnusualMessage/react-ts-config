@@ -1,0 +1,12 @@
+build
+node_modules
+public
+config
+
+.eslintrc
+.prettierrc
+package.json
+package-lock.json
+tsconfig.json
+declarations.d.ts
+.eslintignore

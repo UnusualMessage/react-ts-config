@@ -1,0 +1,100 @@
+{
+  "parser": "@typescript-eslint/parser",
+
+  "env": {
+    "es6": true
+  },
+
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+
+  "ignorePatterns": ["**/*.css", "**/*.scss", "**/*.sass"],
+
+  "plugins": [
+    "@typescript-eslint", "import"
+  ],
+
+  "extends": [
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/strict",
+
+    "prettier"
+  ],
+
+  "rules": {
+    "quotes": "off",
+    "semi": "off",
+    "@typescript-eslint/non-nullable-type-assertion-style": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/react-in-jsx-scope": "off",
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+
+    // use this rule when circular deps exist
+//    "import/no-cycle": "error",
+    "import/no-unresolved": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "sibling", "parent"
+          ],
+          "index",
+          "unknown"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
+          }
+        }
+      }
+    ]
+  },
+
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json",
+        "extensions": [".ts", ".tsx", ".scss"]
+      }
+    }
+  }
+}

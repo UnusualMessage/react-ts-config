@@ -1,0 +1,46 @@
+{
+  "name": "configuration",
+  "version": "1.0.0",
+  "description": "Configuration files (ESLint, tsconfig, webpack, prettier)",
+  "private": true,
+  "keywords": [],
+  "author": "UnusualMessage",
+  "license": "ISC",
+
+  "scripts": {
+    "build": "npx webpack --config config/webpack.entry.config.js --env state=prod",
+    "build-dev": "npx webpack --config config/webpack.entry.config.js --env state=dev",
+    "start": "npx webpack serve --config config/webpack.entry.config.js --env state=dev",
+    "lint": "npx eslint . --ext .ts,.tsx",
+    "lint-fix": "npx eslint . --ext .ts,.tsx --fix",
+    "prettier": "npx prettier . --write"
+  },
+
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "typescript": "^5.0.3",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
